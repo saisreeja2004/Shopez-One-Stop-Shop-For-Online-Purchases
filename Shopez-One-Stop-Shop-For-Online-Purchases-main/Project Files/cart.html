@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShopEZ - Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ShopEZ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+  <button onclick="placeOrder()">Place Order</button>
+  <section>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+    <button onclick="clearCart()">Clear Cart</button>
+  </section>
+
+  <!-- Load the shared cart script -->
+  <script src="script.js"></script>
+  <script>
+    loadCartItems();
+    updateCartCount();
+  </script>
+</body>
+</html>

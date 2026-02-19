@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopEZ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>ShopEZ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="homepage-banner">
+    <img src="images/shop_banner.jpg" alt="Online Shopping Banner" />
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to ShopEZ</h2>
+    <p>Your one-stop destination for online purchases.</p>
+  </section>
+
+  <!-- Featured Products (Static) -->
+  <section class="products">
+    <h3>Featured Products</h3>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/gold_bracelet.jpg" alt="Gold Bracelet" width="100" />
+        <p>Gold Bracelet</p>
+        <p>₹2000</p>
+        <button onclick="addToCart('Gold Bracelet', 2000)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/smart_watch.jpg" alt="Smart Watch" width="100" />
+        <p>Smart Watch</p>
+        <p>₹3500</p>
+        <button onclick="addToCart('Smart Watch', 3500)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/diamond_ring.jpg" alt="Diamond Ring" width="100" />
+        <p>Diamond Ring</p>
+        <p>₹5999</p>
+        <button onclick="addToCart('Diamond Ring', 5999)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/fashion_handbag.jpg" alt="Handbag" width="100" />
+        <p>Handbag</p>
+        <p>₹3499</p>
+        <button onclick="addToCart('Handbag', 3499)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/leather_wallet.jpg" alt="Leather Wallet" width="100" />
+        <p>Leather Wallet</p>
+        <p>₹999</p>
+        <button onclick="addToCart('Leather Wallet', 999)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/pearl_necklace.jpg" alt="Pearl Necklace" width="100" />
+        <p>Pearl Necklace</p>
+        <p>₹2999</p>
+        <button onclick="addToCart('Pearl Necklace', 2999)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/casual_shoes.jpg" alt="Casual Shoes" width="100" />
+        <p>Casual shoes</p>
+        <p>₹4999</p>
+        <button onclick="addToCart('Casual Shoes', 2999)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/silver_chain.jpg" alt="Silver Chain" width="100" />
+        <p>Silver Chain</p>
+        <p>₹3899</p>
+        <button onclick="addToCart('Silver Chain', 3899)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/stylish_earrings.jpg" alt="Ear Rings" width="100" />
+        <p>Ear Rings</p>
+        <p>₹1299</p>
+        <button onclick="addToCart('Ear Rings', 1299)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/sunglasses.jpg" alt="Sunglasses" width="100" />
+        <p>Sunglasses</p>
+        <p>₹799</p>
+        <button onclick="addToCart('Sunglasses', 799)">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/wrist_watch.jpg" alt="Wrist Watch" width="100" />
+        <p>Wrist Watch</p>
+        <p>₹2499</p>
+        <button onclick="addToCart('Wrist Watch', 2499)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ShopEZ. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Logic -->
+  <script>
+    window.onload=function(){
+    updateCartCount();
+    };
+  </script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShopEZ - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>ShopEZ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Login Form -->
+  <section class="login-section">
+    <h2>Login to Your Account</h2>
+    <form class="login-form" onsubmit="handleLogin(event)">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <button type="submit">Login</button>
+
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ShopEZ. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Update cart count in navbar
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let totalItems = 0;
+      cart.forEach(item => totalItems += item.quantity);
+      document.getElementById("cart-count").textContent = totalItems;
+    }
+
+    updateCartCount();
+
+    // Handle login (simulated with localStorage)
+    function handleLogin(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  fetch("http://localhost:8080/api/users/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  })
+    .then(res => res.text())
+    .then(msg => {
+      if (msg === "Login successful") {
+        alert("Login successful!");
+        localStorage.setItem("loggedInUser", JSON.stringify({ email }));
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid credentials!");
+      }
+    })
+    .catch(err => console.error("Login error:", err));
+  }
+
+  </script>
+<script src="script.js"></script>
+</body>
+</html>
